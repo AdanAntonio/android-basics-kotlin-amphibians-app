@@ -41,10 +41,14 @@ class InstrumentationTests : BaseTest() {
         launchActivity<MainActivity>()
         waitForView(withText("Blue Jeans Frog")).perform(click())
         waitForView(withText("Blue Jeans Frog")).check(matches(isDisplayed()))
-        waitForView(withText("Sometimes called the Strawberry Poison-Dart Frog, this little " +
-                "amphibian is identifiable by its bright red body and blueish-purple arms and " +
-                "legs. The Blue Jeans Frog is not toxic to humans like some of its close " +
-                "relatives, but it can be harmful to some predators."))
+        waitForView(
+            withText(
+                "Sometimes called the Strawberry Poison-Dart Frog, this little " +
+                    "amphibian is identifiable by its bright red body and blueish-purple arms and " +
+                    "legs. The Blue Jeans Frog is not toxic to humans like some of its close " +
+                    "relatives, but it can be harmful to some predators.",
+            ),
+        )
             .check(matches(isDisplayed()))
     }
 }
